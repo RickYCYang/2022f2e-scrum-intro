@@ -11,16 +11,12 @@ import { tasksPool } from '@/utils/const';
 import { TTask } from '@/utils/types';
 
 interface IBacklogDnDPanel {
-  contentSeq: number;
+  canDrag: boolean;
   className?: string;
   setPass: (pass: boolean) => void;
 }
 
-const BacklogDnDPanel = ({
-  contentSeq,
-  className,
-  setPass,
-}: IBacklogDnDPanel) => {
+const BacklogDnDPanel = ({ canDrag, className, setPass }: IBacklogDnDPanel) => {
   const [tasks, setTasks] = useState<TTask[]>(
     tasksPool.map((task) => ({ ...task, slot: null }))
   );
@@ -49,9 +45,6 @@ const BacklogDnDPanel = ({
       return newTasks;
     });
   };
-
-  /** User starts to drag the task after forth dialog is shown */
-  const canDrag = contentSeq === 4;
 
   useEffect(() => {
     for (const task of tasks) {

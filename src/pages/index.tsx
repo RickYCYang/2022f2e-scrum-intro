@@ -20,7 +20,7 @@ export default function Home() {
   const [showLayer2BgImgs, setShowLayer2BgImgs] = useState<Boolean>(true);
   const [showAcceptDialog, setShowAcceptDialog] = useState<Boolean>(false);
 
-  const enterVillage = (_e: React.MouseEvent<HTMLButtonElement>) => {
+  const enterVillage = (_e: MouseEvent) => {
     setShowEnterVillage(false);
     setShowLayer2BgImgs(false);
     setShowAcceptDialog(true);

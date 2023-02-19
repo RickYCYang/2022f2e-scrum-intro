@@ -7,15 +7,15 @@ import Image from 'next/image';
 /** assets */
 import jiraIcon from '../../../../public/logo/jira.png';
 
-interface IThirdDialogContent {
-  showNextContent: () => void;
+interface IExampleDialogContent {
+  showNextContent: (e: MouseEvent) => void;
   duration: number;
 }
 
-const ThirdDialogContent = ({
+const ExampleDialogContent = ({
   showNextContent,
   duration,
-}: IThirdDialogContent) => {
+}: IExampleDialogContent) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -43,4 +43,4 @@ const ThirdDialogContent = ({
   );
 };
 
-export default ThirdDialogContent;
+export default ExampleDialogContent;

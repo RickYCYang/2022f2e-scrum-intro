@@ -3,47 +3,47 @@ import { motion } from 'framer-motion';
 /** components */
 import Dialog from '@/components/Dialog';
 import Role from '@/components/Role';
-import FirstDialogContent from './FirstDialogContent';
-import SecondDialogContent from './SecondDialogContent';
-import ThirdDialogContent from './ThirdDialogContent';
-import ForthDialogContent from './ForthDialogContent';
-import FifthDialogContent from './FifthDialogContent';
+import Intro1DialogContent from './Intro1DialogContent';
+import Intro2DialogContent from './Intro2DialogContent';
+import ExampleDialogContent from './ExampleDialogContent';
+import ExerciseDialogContent from './ExerciseDialogContent';
+import PassDialogContent from './PassDialogContent';
 
 /** utils */
-import { roles } from '@/utils/const';
+import { roles, INTRO_1, INTRO_2, EXAMPLE, EXEC, PASS } from '@/utils/const';
 
 interface IBacklogDialog {
-  contentSeq: number;
-  showNextContent: () => void;
+  content: string;
+  showNextContent: (e: MouseEvent) => void;
 }
 
 const duration = 1;
 const delay = 1;
 
-const BacklogDialog = ({ contentSeq, showNextContent }: IBacklogDialog) => {
+const BacklogDialog = ({ content, showNextContent }: IBacklogDialog) => {
   const getContent = () => {
-    switch (contentSeq) {
-      case 1:
+    switch (content) {
+      case INTRO_1:
         return (
-          <FirstDialogContent
+          <Intro1DialogContent
             showNextContent={showNextContent}
             duration={duration}
             delay={delay}
           />
         );
-      case 2:
-        return <SecondDialogContent duration={duration} />;
-      case 3:
+      case INTRO_2:
+        return <Intro2DialogContent duration={duration} />;
+      case EXAMPLE:
         return (
-          <ThirdDialogContent
+          <ExampleDialogContent
             showNextContent={showNextContent}
             duration={duration}
           />
         );
-      case 4:
-        return <ForthDialogContent duration={duration} />;
-      case 5:
-        return <FifthDialogContent duration={duration} />;
+      case EXEC:
+        return <ExerciseDialogContent duration={duration} />;
+      case PASS:
+        return <PassDialogContent duration={duration} />;
     }
   };
 

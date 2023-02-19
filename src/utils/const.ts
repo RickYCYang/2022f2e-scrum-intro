@@ -12,6 +12,13 @@ export enum dialogColors {
   PURPLE = 'purple',
 }
 
+export const INTRO_1 = 'INTRO_1';
+export const INTRO_2 = 'INTRO_2';
+export const EXAMPLE = 'EXAMPLE';
+export const EXEC = 'EXEC';
+export const PASS = 'PASS';
+export const backlogDialogs = [INTRO_1, INTRO_2, EXAMPLE, EXEC, PASS];
+
 export const tasksPool = [
   {
     title: '應徵者的線上履歷編輯器',

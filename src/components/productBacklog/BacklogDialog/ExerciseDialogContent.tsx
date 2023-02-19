@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 
-interface IForthDialogContent {
+interface IExerciseDialogContent {
   duration: number;
 }
 
-const ForthDialogContent = ({ duration }: IForthDialogContent) => {
+const ExerciseDialogContent = ({ duration }: IExerciseDialogContent) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,4 +20,4 @@ const ForthDialogContent = ({ duration }: IForthDialogContent) => {
   );
 };
 
-export default ForthDialogContent;
+export default ExerciseDialogContent;

@@ -5,7 +5,7 @@ interface IButton {
   className?: string;
   outlined?: boolean;
   disabled?: boolean;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick: (event: MouseEvent) => void;
 }
 
 const Button = ({
@@ -17,7 +17,7 @@ const Button = ({
 }: IButton) => {
   const onClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    onClick(e);
+    onClick(e.nativeEvent);
   };
 
   return (

@@ -7,18 +7,23 @@ import { motion } from 'framer-motion';
 import Progressbar from '@/components/Progressbar';
 import BacklogDialog from '@/components/productBacklog/BacklogDialog/BacklogDialog';
 import Button from '@/components/Button';
-//import BacklogPanelExample from '@/components/productBacklog/BacklogPanelExample';
 import BacklogDnDPanel from '@/components/productBacklog/BacklogDnDPanel/BacklogDnDPanel';
+
+/** utils */
+import { backlogDialogs, INTRO_2, EXAMPLE, EXEC, PASS } from '@/utils/const';
 
 const ProductBacklog = () => {
   const router = useRouter();
-  const [contentSeq, setContentSeq] = useState<number>(1);
+  const [contentSeq, setContentSeq] = useState<number>(0);
   const [pass, setPass] = useState<boolean>(false);
-  const showStartButton = contentSeq === 2;
-  const showBacklogPanel = contentSeq >= 3 && contentSeq < 5;
-  const showCompeleteButton = contentSeq === 4;
+  const showStartButton = backlogDialogs[contentSeq] === INTRO_2;
+  const showBacklogPanel = [EXAMPLE, EXEC, PASS].includes(
+    backlogDialogs[contentSeq]
+  );
+  const canDrag = backlogDialogs[contentSeq] === EXEC;
+  const showCompeleteButton = canDrag;
 
-  const showNextContent = () => {
+  const showNextContent = (_e: MouseEvent) => {
     setContentSeq((prev) => prev + 1);
   };
 
@@ -28,7 +33,7 @@ const ProductBacklog = () => {
   );
 
   useEffect(() => {
-    if (pass && contentSeq >= 5) {
+    if (pass && backlogDialogs[contentSeq] === PASS) {
       document.addEventListener('click', redirectToSprintIntro);
     }
     return () => {
@@ -48,7 +53,7 @@ const ProductBacklog = () => {
         <Progressbar value={20} />
         <div className="container py-10 flex flex-col">
           <BacklogDialog
-            contentSeq={contentSeq}
+            content={backlogDialogs[contentSeq]}
             showNextContent={showNextContent}
           />
           <div className="h-full w-full text-center relative">
@@ -71,7 +76,7 @@ const ProductBacklog = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
               >
-                <BacklogDnDPanel contentSeq={contentSeq} setPass={setPass} />
+                <BacklogDnDPanel canDrag={canDrag} setPass={setPass} />
               </motion.div>
             ) : null}
             {showCompeleteButton ? (

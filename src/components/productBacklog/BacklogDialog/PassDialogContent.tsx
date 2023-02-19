@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 /** components */
 import { AiFillCaretDown } from 'react-icons/ai';
 
-interface IFifthDialogContent {
+interface IPassDialogContent {
   duration: number;
 }
 
-const FifthDialogContent = ({ duration }: IFifthDialogContent) => {
+const PassDialogContent = ({ duration }: IPassDialogContent) => {
   return (
     <motion.div
       className="relative w-auto"
@@ -24,4 +24,4 @@ const FifthDialogContent = ({ duration }: IFifthDialogContent) => {
   );
 };
 
-export default FifthDialogContent;
+export default PassDialogContent;

@@ -2,17 +2,17 @@
 import { AiFillCaretDown } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
-interface IFirstDialogContent {
-  showNextContent: () => void;
+interface IIntro1DialogContent {
+  showNextContent: (e: MouseEvent) => void;
   duration: number;
   delay: number;
 }
 
-const FirstDialogContent = ({
+const Intro1DialogContent = ({
   showNextContent,
   duration,
   delay,
-}: IFirstDialogContent) => (
+}: IIntro1DialogContent) => (
   <div className="relative">
     <motion.p
       className="mb-2"
@@ -50,4 +50,4 @@ const FirstDialogContent = ({
   </div>
 );
 
-export default FirstDialogContent;
+export default Intro1DialogContent;

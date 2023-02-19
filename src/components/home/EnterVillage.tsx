@@ -11,7 +11,7 @@ import scrum from '../../../public/logo/scrum.png';
 const inter = Inter({ subsets: ['latin'] });
 
 interface IEnterVillage {
-  enterVillage: (_e: React.MouseEvent<HTMLButtonElement>) => void;
+  enterVillage: (_e: MouseEvent) => void;
   duration: number;
 }
 

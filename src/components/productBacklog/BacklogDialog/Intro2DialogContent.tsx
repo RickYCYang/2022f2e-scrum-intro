@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 
-interface ISecondDialogContent {
+interface IIntro2DialogContent {
   duration: number;
 }
 
-const SecondDialogContent = ({ duration }: ISecondDialogContent) => {
+const Intro2DialogContent = ({ duration }: IIntro2DialogContent) => {
   return (
     <motion.p
       initial={{ opacity: 0 }}
@@ -18,4 +18,4 @@ const SecondDialogContent = ({ duration }: ISecondDialogContent) => {
   );
 };
 
-export default SecondDialogContent;
+export default Intro2DialogContent;

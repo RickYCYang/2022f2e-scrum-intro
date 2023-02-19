@@ -5,7 +5,7 @@ import Dialog from '../Dialog';
 import Button from '../Button';
 
 interface IAcceptDialog {
-  acceptChallenge: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  acceptChallenge: (e: MouseEvent) => void;
   duration: number;
   delay: number;
 }
