@@ -3,14 +3,22 @@ import { motion } from 'framer-motion';
 /** components */
 import Dialog from '../Dialog';
 import Button from '../Button';
+import React from 'react';
 
-interface IAcceptDialog {
-  acceptChallenge: (e: MouseEvent) => void;
+/** utils */
+import { roles } from '@/utils/const';
+
+interface AcceptDialogProps {
+  acceptChallenge: (e: React.MouseEvent<HTMLButtonElement>) => void;
   duration: number;
   delay: number;
 }
 
-const AcceptDialog = ({ acceptChallenge, duration, delay }: IAcceptDialog) => {
+const AcceptDialog = ({
+  acceptChallenge,
+  duration,
+  delay,
+}: AcceptDialogProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -21,7 +29,7 @@ const AcceptDialog = ({ acceptChallenge, duration, delay }: IAcceptDialog) => {
           w-2/3 h-0 flex flex-col justify-center items-center
         `}
     >
-      <Dialog label="（謎之音）" className="pt-24 pb-20">
+      <Dialog label={roles.ANONUMITY} className="pt-24 pb-20">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

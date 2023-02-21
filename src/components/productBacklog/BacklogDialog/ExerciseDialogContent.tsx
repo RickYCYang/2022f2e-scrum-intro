@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 
-interface IExerciseDialogContent {
+interface ExerciseDialogContentProps {
   duration: number;
 }
 
-const ExerciseDialogContent = ({ duration }: IExerciseDialogContent) => {
+const ExerciseDialogContent = ({ duration }: ExerciseDialogContentProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}

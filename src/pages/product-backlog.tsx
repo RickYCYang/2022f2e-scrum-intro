@@ -5,12 +5,13 @@ import { motion } from 'framer-motion';
 
 /** components */
 import Progressbar from '@/components/Progressbar';
-import BacklogDialog from '@/components/productBacklog/BacklogDialog/BacklogDialog';
+import BacklogDialog from '@/components/productBacklog/backlogDialog/BacklogDialog';
 import Button from '@/components/Button';
-import BacklogDnDPanel from '@/components/productBacklog/BacklogDnDPanel/BacklogDnDPanel';
+import BacklogDnDPanel from '@/components/productBacklog/backlogDnDPanel/BacklogDnDPanel';
 
 /** utils */
 import { backlogDialogs, INTRO_2, EXAMPLE, EXEC, PASS } from '@/utils/const';
+import { TButtonSVGClickHandler } from '@/utils/types';
 
 const ProductBacklog = () => {
   const router = useRouter();
@@ -23,7 +24,7 @@ const ProductBacklog = () => {
   const canDrag = backlogDialogs[contentSeq] === EXEC;
   const showCompeleteButton = canDrag;
 
-  const showNextContent = (_e: MouseEvent) => {
+  const showNextContent = (_e: TButtonSVGClickHandler) => {
     setContentSeq((prev) => prev + 1);
   };
 

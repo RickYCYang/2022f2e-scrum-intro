@@ -11,16 +11,17 @@ import PassDialogContent from './PassDialogContent';
 
 /** utils */
 import { roles, INTRO_1, INTRO_2, EXAMPLE, EXEC, PASS } from '@/utils/const';
+import { TButtonSVGClickHandler } from '@/utils/types';
 
-interface IBacklogDialog {
+interface BacklogDialogProps {
   content: string;
-  showNextContent: (e: MouseEvent) => void;
+  showNextContent: (e: TButtonSVGClickHandler) => void;
 }
 
 const duration = 1;
 const delay = 1;
 
-const BacklogDialog = ({ content, showNextContent }: IBacklogDialog) => {
+const BacklogDialog = ({ content, showNextContent }: BacklogDialogProps) => {
   const getContent = () => {
     switch (content) {
       case INTRO_1:
@@ -55,7 +56,7 @@ const BacklogDialog = ({ content, showNextContent }: IBacklogDialog) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
       >
-        <Dialog label="PO" className="w-[998px] text-base">
+        <Dialog label={roles.PO} className="w-[998px] text-base">
           {getContent()}
         </Dialog>
       </motion.div>

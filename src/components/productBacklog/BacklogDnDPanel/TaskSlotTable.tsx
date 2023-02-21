@@ -3,15 +3,15 @@ import TaskSlot from './TaskSlot';
 import PriorityArrowLine from '../PriorityArrowLine';
 
 /** utils */
-import { TTask, TMoveTask } from '@/utils/types';
+import { Task, MoveTask } from '@/utils/types';
 
 const TaskSlotTable = ({
   tasks,
   moveTask,
   canDrag,
 }: {
-  tasks?: TTask[];
-  moveTask: TMoveTask;
+  tasks?: Task[];
+  moveTask: MoveTask;
   canDrag: boolean;
 }) => {
   const getTaskSlots = () => {

@@ -8,20 +8,24 @@ import InitDraggableTasks from './InitDraggableTasks';
 
 /** utils */
 import { tasksPool } from '@/utils/const';
-import { TTask } from '@/utils/types';
+import { Task } from '@/utils/types';
 
-interface IBacklogDnDPanel {
+interface BacklogDnDPanelProps {
   canDrag: boolean;
   className?: string;
   setPass: (pass: boolean) => void;
 }
 
-const BacklogDnDPanel = ({ canDrag, className, setPass }: IBacklogDnDPanel) => {
-  const [tasks, setTasks] = useState<TTask[]>(
+const BacklogDnDPanel = ({
+  canDrag,
+  className,
+  setPass,
+}: BacklogDnDPanelProps) => {
+  const [tasks, setTasks] = useState<Task[]>(
     tasksPool.map((task) => ({ ...task, slot: null }))
   );
 
-  const moveTask = (task: TTask, targetSlot: number | null): void => {
+  const moveTask = (task: Task, targetSlot: number | null): void => {
     console.log('task', task);
     console.log('targetSlot', targetSlot);
     setTasks((prev) => {

@@ -1,9 +1,11 @@
-/** components */
 import { AiFillCaretDown } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
-interface IIntro1DialogContent {
-  showNextContent: (e: MouseEvent) => void;
+/** utils */
+import { TSVGClickHandler } from '@/utils/types';
+
+interface Intro1DialogContentProps {
+  showNextContent: (e: TSVGClickHandler) => void;
   duration: number;
   delay: number;
 }
@@ -12,7 +14,7 @@ const Intro1DialogContent = ({
   showNextContent,
   duration,
   delay,
-}: IIntro1DialogContent) => (
+}: Intro1DialogContentProps) => (
   <div className="relative">
     <motion.p
       className="mb-2"

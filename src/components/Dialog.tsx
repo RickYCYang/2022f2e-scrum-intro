@@ -2,11 +2,11 @@ import React, { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
 /** utils */
-import { dialogColors } from '@/utils/const';
+import { dialogColors, roles } from '@/utils/const';
 
-interface IDialog {
+interface DialogProps {
   children: ReactNode;
-  label: string;
+  label: roles;
   className?: string;
   color?: dialogColors;
   animateEffect?: boolean;
@@ -18,7 +18,7 @@ const Dialog = ({
   className,
   color,
   animateEffect = true,
-}: IDialog) => {
+}: DialogProps) => {
   const duration = animateEffect ? 2 : 0;
   let borderColorClass = '';
   let shadowColorClass = '';

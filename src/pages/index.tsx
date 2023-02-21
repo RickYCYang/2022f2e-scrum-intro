@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { AnimatePresence } from 'framer-motion';
@@ -20,7 +20,7 @@ export default function Home() {
   const [showLayer2BgImgs, setShowLayer2BgImgs] = useState<Boolean>(true);
   const [showAcceptDialog, setShowAcceptDialog] = useState<Boolean>(false);
 
-  const enterVillage = (_e: MouseEvent) => {
+  const enterVillage = (_e: React.MouseEvent<HTMLButtonElement>) => {
     setShowEnterVillage(false);
     setShowLayer2BgImgs(false);
     setShowAcceptDialog(true);

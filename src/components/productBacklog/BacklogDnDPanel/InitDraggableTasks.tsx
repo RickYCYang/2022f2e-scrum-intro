@@ -6,19 +6,19 @@ import { FaHandPaper } from 'react-icons/fa';
 import { AiFillCaretLeft } from 'react-icons/ai';
 
 /** utils */
-import { TTask, TMoveTask } from '@/utils/types';
+import { Task, MoveTask } from '@/utils/types';
 
-interface IInitDraggableTasks {
+interface InitDraggableTasksProps {
   canDrag: boolean;
-  tasks: TTask[];
-  moveTask: TMoveTask;
+  tasks: Task[];
+  moveTask: MoveTask;
 }
 
 const InitDraggableTasks = ({
   canDrag,
   tasks,
   moveTask,
-}: IInitDraggableTasks) => {
+}: InitDraggableTasksProps) => {
   const taskSlotRef = useRef<HTMLDivElement>(null);
   const tasksWithNullSlot = tasks.filter((task) => task.slot === null);
 

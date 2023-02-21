@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface IButton {
+interface ButtonProps {
   label: string;
   className?: string;
   outlined?: boolean;
   disabled?: boolean;
-  onClick: (event: MouseEvent) => void;
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button = ({
@@ -14,10 +14,10 @@ const Button = ({
   className,
   outlined = false,
   disabled = false,
-}: IButton) => {
+}: ButtonProps) => {
   const onClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    onClick(e.nativeEvent);
+    onClick(e);
   };
 
   return (

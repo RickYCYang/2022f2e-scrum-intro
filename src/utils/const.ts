@@ -1,8 +1,9 @@
 export enum roles {
   PO = 'PO',
-  TEAM1 = 'TEAM1',
-  TEAM2 = 'TEAM2',
-  SM = 'SM',
+  GG = 'GG',
+  MM = 'MM',
+  EE = 'EE',
+  ANONUMITY = '(謎之音)',
 }
 
 export enum dialogColors {

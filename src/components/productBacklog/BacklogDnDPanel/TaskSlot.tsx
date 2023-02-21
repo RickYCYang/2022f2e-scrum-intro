@@ -5,14 +5,14 @@ import DraggableTask from './DraggableTask';
 
 /** utils */
 import itemTypes from '@/utils/itemTypes';
-import { TTask, TMoveTask } from '@/utils/types';
+import { Task, MoveTask } from '@/utils/types';
 import { ReactNode } from 'react';
 
-interface ITaskSlot {
+interface TaskSlotProps {
   slot: number | null;
-  task?: TTask;
+  task?: Task;
   className?: string;
-  moveTask: TMoveTask;
+  moveTask: MoveTask;
   canDrag: boolean;
   children?: ReactNode;
 }
@@ -24,12 +24,12 @@ const TaskSlot = ({
   moveTask,
   canDrag,
   children,
-}: ITaskSlot) => {
+}: TaskSlotProps) => {
   const [{ isOver, canDrop }, dropRef] = useDrop(
     () => ({
       accept: itemTypes.TASK,
       //canDrop: (_item) => slot !== null,
-      drop: (item: TTask) => {
+      drop: (item: Task) => {
         moveTask(item, slot);
       },
       collect: (monitor) => ({

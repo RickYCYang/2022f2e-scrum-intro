@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 /** components */
 import { AiFillCaretDown } from 'react-icons/ai';
 
-interface IPassDialogContent {
+interface PassDialogContentProps {
   duration: number;
 }
 
-const PassDialogContent = ({ duration }: IPassDialogContent) => {
+const PassDialogContent = ({ duration }: PassDialogContentProps) => {
   return (
     <motion.div
       className="relative w-auto"

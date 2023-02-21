@@ -7,18 +7,21 @@ import Button from '@/components/Button';
 
 /** images */
 import scrum from '../../../public/logo/scrum.png';
+import React from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
-interface IEnterVillage {
-  enterVillage: (_e: MouseEvent) => void;
+interface EnterVillageProps {
+  enterVillage: (e: React.MouseEvent<HTMLButtonElement>) => void;
   duration: number;
 }
 
-const EnterVillage = ({ enterVillage, duration }: IEnterVillage) => {
+const EnterVillage = ({ enterVillage, duration }: EnterVillageProps) => {
   return (
     <motion.div
       className={`flex flex-col justify-center items-center z-50 relative`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration }}
       exit={{ opacity: 0 }}
     >

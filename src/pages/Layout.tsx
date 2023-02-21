@@ -1,11 +1,11 @@
 import Footer from '@/components/Footer';
 import { ReactElement } from 'react';
 
-interface ILayout {
+interface LayoutProps {
   children: ReactElement;
 }
 
-const Layout = ({ children }: ILayout) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <main className="h-screen bg-village">{children}</main>

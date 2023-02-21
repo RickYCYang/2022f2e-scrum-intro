@@ -8,60 +8,64 @@ import { roles } from '@/utils/const';
 
 /** images */
 import hole from '../../public/role/hole.png';
-import rolePO from '../../public/role/role_po.png';
-import roleSM from '../../public/role/role_sm.png';
-import roleTeam1 from '../../public/role/role_team1.png';
-import roleTeam2 from '../../public/role/role_team2.png';
+import imgRolePO from '../../public/role/role_po.png';
+import imgRoleMM from '../../public/role/role_mm.png';
+import imgRoleEE from '../../public/role/role_ee.png';
+import imgRoleGG from '../../public/role/role_gg.png';
 
-interface IRole {
+interface RoleProps {
   role: TRole;
-  className?: string;
   duration?: number;
 }
 
-const Role = memo(({ role, className, duration = 0 }: IRole) => {
+const Role = memo(({ role, duration = 0 }: RoleProps) => {
   let roleImg = null;
   switch (role) {
     case roles.PO: {
-      roleImg = rolePO;
+      roleImg = imgRolePO;
       break;
     }
-    case roles.SM: {
-      roleImg = roleSM;
+    case roles.MM: {
+      roleImg = imgRoleMM;
       break;
     }
-    case roles.TEAM1: {
-      roleImg = roleTeam1;
+    case roles.EE: {
+      roleImg = imgRoleEE;
       break;
     }
-    case roles.TEAM2: {
-      roleImg = roleTeam2;
+    case roles.GG: {
+      roleImg = imgRoleGG;
       break;
     }
     default: {
-      roleImg = rolePO;
+      roleImg = imgRolePO;
       break;
     }
   }
 
+  /**
+   * role MM's position should be at top while hole should be at bottom
+   * the other roles' position should be at bottom while hole should be at top
+   */
+  let holeClass = 'absolute top-0 left-0 z-10';
+  let roleClass = 'absolute top-1 z-20';
+
   return (
-    <div className={`relative overflow-y-hidden w-52 h-52 ${className}`}>
-      <motion.div
+    <div className={`relative overflow-y-hidden w-52 h-52`}>
+      <motion.img
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration }}
-        className={`absolute top-0 left-0 z-10`}
-      >
-        <Image src={hole} alt="hole" />
-      </motion.div>
-      <motion.div
+        className={holeClass}
+        src={hole.src}
+      />
+      <motion.img
         initial={{ top: -999 }}
         animate={{ top: 0 }}
         transition={{ duration, delay: duration }}
-        className="absolute top-1 z-20"
-      >
-        <Image src={roleImg} alt="role" />
-      </motion.div>
+        className={roleClass}
+        src={roleImg.src}
+      />
     </div>
   );
 });

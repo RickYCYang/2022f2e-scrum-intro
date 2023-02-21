@@ -5,14 +5,14 @@ import Task from '../Task';
 
 /** utils */
 import itemTypes from '@/utils/itemTypes';
-import { TTask } from '@/utils/types';
+import { Task as TaskType } from '@/utils/types';
 
-interface IDraggableTask {
-  task: TTask;
+interface DraggableTaskProps {
+  task: TaskType;
   canDrag: boolean;
 }
 
-const DraggableTask = ({ task, canDrag }: IDraggableTask) => {
+const DraggableTask = ({ task, canDrag }: DraggableTaskProps) => {
   const [{ isDragging }, dragRef, _dragPreviewRef] = useDrag(
     () => ({
       type: itemTypes.TASK,

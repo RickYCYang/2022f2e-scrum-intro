@@ -4,18 +4,21 @@ import { motion } from 'framer-motion';
 import { AiFillCaretDown } from 'react-icons/ai';
 import Image from 'next/image';
 
+/** utils */
+import { TSVGClickHandler } from '@/utils/types';
+
 /** assets */
 import jiraIcon from '../../../../public/logo/jira.png';
 
-interface IExampleDialogContent {
-  showNextContent: (e: MouseEvent) => void;
+interface ExampleDialogContentProps {
+  showNextContent: (e: TSVGClickHandler) => void;
   duration: number;
 }
 
 const ExampleDialogContent = ({
   showNextContent,
   duration,
-}: IExampleDialogContent) => {
+}: ExampleDialogContentProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
