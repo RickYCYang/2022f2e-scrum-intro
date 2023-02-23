@@ -44,11 +44,18 @@ const Role = memo(({ role, duration = 0 }: RoleProps) => {
   }
 
   /**
-   * role MM's position should be at top while hole should be at bottom
-   * the other roles' position should be at bottom while hole should be at top
+   * role MM's position should be on top while hole should be on bottom
+   * the other roles' position should be on bottom while hole should be on top
+   * see the images at /public/role/*.png
    */
-  let holeClass = 'absolute top-0 left-0 z-10';
-  let roleClass = 'absolute top-1 z-20';
+  let holePosClass = 'top-0';
+  let roleInitPosStyle: { top?: number; bottom?: number } = { top: -999 };
+  let roleAnimatePosStyle: { top?: number; bottom?: number } = { top: 1 };
+  if (role === roles.MM) {
+    holePosClass = 'bottom-0';
+    roleInitPosStyle = { bottom: -999 };
+    roleAnimatePosStyle = { bottom: 2 };
+  }
 
   return (
     <div className={`relative overflow-y-hidden w-52 h-52`}>
@@ -56,14 +63,14 @@ const Role = memo(({ role, duration = 0 }: RoleProps) => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration }}
-        className={holeClass}
+        className={`absolute z-10  ${holePosClass}`}
         src={hole.src}
       />
       <motion.img
-        initial={{ top: -999 }}
-        animate={{ top: 0 }}
-        transition={{ duration, delay: duration }}
-        className={roleClass}
+        initial={roleInitPosStyle}
+        animate={roleAnimatePosStyle}
+        transition={{ duration, delay: duration }} // delay after role shown
+        className={`absolute z-20`}
         src={roleImg.src}
       />
     </div>

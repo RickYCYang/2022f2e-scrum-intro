@@ -8,7 +8,8 @@ import { AnimatePresence } from 'framer-motion';
 import Progressbar from '@/components/Progressbar';
 import PODialog from '@/components/sprintIntro/introDialog/PODialog';
 import MMDialog from '@/components/sprintIntro/introDialog/MMDialog';
-import SprintPlanDiagram from '@/components/sprintIntro/introDialog/SprintPlanDiagram';
+import SprintPlanFigure from '@/components/sprintIntro/introDialog/SprintPlanFigure';
+import PlanningTeamFigure from '@/components/sprintIntro/introDialog/PlanningTeamFigure';
 
 /** utils */
 import { TButtonSVGClickHandler } from '@/utils/types';
@@ -33,26 +34,29 @@ const SprintIntro = () => {
         flex flex-col items-center"
       >
         <Progressbar value={40} />
-        <div className="container py-10 flex flex-col">
+        <div className="container py-10 flex flex-col h-full">
           <AnimatePresence>
             {dialogSeq === 1 && (
-              <>
+              <div>
                 <PODialog
                   onClick={showNextDialog}
                   duration={duration}
                   delay={delay}
                 />
-                <SprintPlanDiagram duration={duration} delay={delay + 0.3} />
-              </>
+                <SprintPlanFigure duration={duration} delay={delay + 0.3} />
+              </div>
             )}
-            {dialogSeq === 2 && (
-              <>
+          </AnimatePresence>
+          <AnimatePresence>
+            {(dialogSeq === 2 || dialogSeq === 3) && (
+              <div className="mt-auto pb-10">
+                <PlanningTeamFigure duration={duration} delay={delay + 0.3} />
                 <MMDialog
                   onClick={showNextDialog}
                   duration={duration}
                   delay={delay}
                 />
-              </>
+              </div>
             )}
           </AnimatePresence>
         </div>

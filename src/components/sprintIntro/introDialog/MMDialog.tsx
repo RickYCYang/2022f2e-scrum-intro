@@ -17,7 +17,7 @@ interface MMDialogProps {
 
 const MMDialog = ({ onClick, duration = 0, delay = 0 }: MMDialogProps) => {
   return (
-    <div className={`flex justify-start gap-10`}>
+    <div className={`flex justify-start items-end gap-10`}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -27,7 +27,7 @@ const MMDialog = ({ onClick, duration = 0, delay = 0 }: MMDialogProps) => {
         <Dialog
           label={roles.PO}
           color={dialogColors.PURPLE}
-          className="w-[998px] text-base relative"
+          className="w-[998px] text-base relative mb-5"
         >
           哦哦 ， 你是新來的前端吧 ！ 我是這次的
           <span className="text-primary">ScrumMaster MM</span> ，
