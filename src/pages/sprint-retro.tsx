@@ -40,6 +40,7 @@ const SprintRetro = () => {
             showNextFrame={showNextFrame}
             disabled={showFrame3}
             showReadyButton={showFrame2}
+            className='2xl:mt-14'
           />
         </Container>
       </Main>

@@ -49,12 +49,12 @@ const ProductBacklog = () => {
             showFrame4={showFrame4}
             showFrame5={showFrame5}
           />
-          <div className="relative text-center">
+          <div className='relative text-center mt-10 2xl:mt-14'>
             {showFrame2 ? (
               <Button
-                label="準備好了"
+                label='準備好了'
                 onClick={showNextFrame}
-                className="mt-36"
+                className='mt-20'
                 duration={1}
                 delay={0.8}
               />

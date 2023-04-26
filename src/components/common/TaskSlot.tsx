@@ -58,7 +58,7 @@ const TaskSlot = ({
    * show dash-border if there is no task in the slot currently,
    * otherwise, border is not need since <DraggableTask /> has its own border style
    */
-  const dynamicClasses = classNames({
+  const borderClasses = classNames({
     'border-2 border-dashed': !showTask,
     'border-primary': color === themeColors.PRIMARY,
     'border-yellow': color === themeColors.YELLOW,
@@ -69,11 +69,11 @@ const TaskSlot = ({
     <div className={`flex justify-center ${className} min-h-[56px] w-[320px]`}>
       <div
         ref={dropRef}
-        className={`relative rounded-md min-h-[56px] w-full z-20 ${dynamicClasses}`}
+        className={`relative rounded-md min-h-[56px] w-full z-20 ${borderClasses}`}
       >
         {children}
         {showPreviewSlot && (
-          <div className="min-h-[56px] bg-black/50 rounded-md" />
+          <div className='min-h-[56px] bg-black/50 rounded-md' />
         )}
         {task?.title && (
           <DraggableTask

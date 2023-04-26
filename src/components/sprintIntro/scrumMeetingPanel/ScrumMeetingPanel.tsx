@@ -21,25 +21,26 @@ const ScrumMeetingPanel = ({
   visible,
   duration = 0.7,
   showNextFrame,
+  className,
 }: ScrumMeetingPanelProps) => {
   if (!visible) return null;
 
   return (
-    <div className="relative">
+    <div className={`relative ${className}`}>
       <motion.div
-        className="absolute"
+        className='absolute'
         initial={{ left: -999 }}
         animate={{ left: 0 }}
         transition={{ duration }}
       >
-        <div className="grid grid-cols-3 gap-10">
+        <div className='grid grid-cols-3 gap-10'>
           <DailyScrumMeeting />
           <SprintReviewMeeting />
           <SprintRetroMeeting />
         </div>
         <Button
-          className="block ml-auto mt-6"
-          label="練習去囉"
+          className='block ml-auto mt-6'
+          label='練習去囉'
           onClick={showNextFrame}
         />
       </motion.div>

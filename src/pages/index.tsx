@@ -32,7 +32,7 @@ export default function Home() {
     /** wait for animation */
     setTimeout(() => {
       router.push('product-backlog');
-    }, 800);
+    }, 1500);
   };
 
   return (
@@ -41,13 +41,13 @@ export default function Home() {
         <title>Scrum 新手村</title>
       </Head>
       <main
-        className="h-screen relative overflow-hidden
-        flex flex-col justify-center items-center"
+        className='h-screen relative overflow-hidden
+        flex flex-col justify-center items-center'
       >
         <Progressbar value={0} />
         <AnimatePresence>
           {showLayer1BgImgs && (
-            <Layer1BgImgs duration={duration} delay={delay} />
+            <Layer1BgImgs duration={duration} delay={delay / 2} />
           )}
         </AnimatePresence>
         <AnimatePresence>

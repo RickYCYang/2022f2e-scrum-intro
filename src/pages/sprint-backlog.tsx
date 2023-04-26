@@ -48,7 +48,7 @@ const SprintIntro = () => {
           onClick={redirectToSprintIntro}
         />
         <Progressbar value={40} />
-        <Container className="h-full">
+        <Container className='h-full'>
           <>
             {/** PO's Dialog */}
             <PODialog
@@ -94,6 +94,7 @@ const SprintIntro = () => {
             <BacklogDnDPanel
               visible={showFrame7 || showFrame8}
               showNextFrame={showNextFrame}
+              className='2xl:mt-14'
             />
           </>
           <>

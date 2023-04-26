@@ -72,17 +72,17 @@ const TaskSlotTable = ({
       className={`w-[400px] h-[440px] flex flex-col rounded-md shadow-md ${tableShadowClass}`}
     >
       <div className={`py-2 rounded-t-md text-center ${headerBgColorClass}`}>
-        <h4 className="text-2xl font-bold">{title}</h4>
+        <h4 className='text-2xl font-bold'>{title}</h4>
         <h6 className={`text-base font-bold ${headerSubtitleColorClass}`}>
           {subtitle}
         </h6>
       </div>
       <div
         className={`bg-gradient-to-t rounded-b-md py-3 px-8 relative opacity-100 
-        flex-1 flex flex-col justify-around
+        flex-1 flex flex-col justify-around items-center
         ${bodyBgColorClass}`}
       >
-        {showPriorityLine && <PriorityLine className="absolute left-3 top-0" />}
+        {showPriorityLine && <PriorityLine className='absolute left-3 top-0' />}
         {slotsArr.map((index) => {
           const task = tasks?.find(
             (t) => t.slot === index && t.slotType === slotType

@@ -24,7 +24,11 @@ interface BacklogDnDPanelProps extends TransitionProps, ElementStyleProps {
 /** ttl scrum points should not exceed 20 */
 const maximumScrumPoints = 20;
 
-const BacklogDnDPanel = ({ visible, showNextFrame }: BacklogDnDPanelProps) => {
+const BacklogDnDPanel = ({
+  visible,
+  showNextFrame,
+  className,
+}: BacklogDnDPanelProps) => {
   const [tasks, setTasks] = useState<MoveItem[]>(sprintBacklogs);
 
   const moveTask = (
@@ -83,22 +87,22 @@ const BacklogDnDPanel = ({ visible, showNextFrame }: BacklogDnDPanelProps) => {
   return (
     <DndProvider backend={HTML5Backend}>
       <div
-        className={`relative w-full flex justify-center items-stretch gap-10 py-10`}
+        className={`relative w-full flex justify-center items-stretch gap-10 py-10 ${className}`}
       >
         <TaskSlotTable
           tasks={tasks}
           moveTask={moveTask}
-          title="產品待辦清單"
-          subtitle="Product Backlog"
-          slotType="init"
+          title='產品待辦清單'
+          subtitle='Product Backlog'
+          slotType='init'
           slots={4}
         />
         <TaskSlotTable
           tasks={tasks}
           moveTask={moveTask}
-          title="開發Ａ組的短衝待辦清單"
-          subtitle="Sprint Backlog"
-          slotType="moved"
+          title='開發Ａ組的短衝待辦清單'
+          subtitle='Sprint Backlog'
+          slotType='moved'
           slots={4}
           color={themeColors.YELLOW}
           progressbarValue={progressbarValue}
@@ -107,9 +111,9 @@ const BacklogDnDPanel = ({ visible, showNextFrame }: BacklogDnDPanelProps) => {
           taskBorderColor={scrumTableTaskBorderColor}
         />
         <Button
-          label="開始sprint"
+          label='開始sprint'
           onClick={showNextFrame}
-          className="self-end"
+          className='self-end'
           disabled={disableSprintBtn}
         />
       </div>

@@ -1,4 +1,3 @@
-import { useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 /** components */
@@ -37,7 +36,7 @@ const StoryPointFigure = ({
       .fill(null)
       .map((_, index) => {
         return (
-          <div key={index} className="relative">
+          <div key={index} className='relative'>
             <Story
               index={index + offset}
               duration={duration}
@@ -62,7 +61,7 @@ const StoryPointFigure = ({
   };
 
   return (
-    <div className="relative p-20">
+    <div className='relative p-20'>
       <AnimatePresence>
         {!showTransitionImgs && (
           <motion.img
@@ -70,15 +69,15 @@ const StoryPointFigure = ({
             animate={{ opacity: 1 }}
             transition={{ duration, delay }}
             exit={{ opacity: 0, transition: { delay: 0 } }}
-            className="absolute left-10 top-10 max-w-[165px] h-auto"
+            className='absolute left-10 top-10 max-w-[165px] h-auto'
             src={time.src}
           />
         )}
       </AnimatePresence>
-      <div className="flex justify-center items-center gap-10 mb-10">
+      <div className='flex justify-center items-center gap-10 mb-10'>
         {getStoryPointImgs(firstRowStoryPointImgs, 0, delay)}
       </div>
-      <div className="flex justify-center items-center gap-10">
+      <div className='flex justify-center items-center gap-10'>
         {getStoryPointImgs(
           secondRowStoryPointImgs,
           firstRowStoryPointImgs,

@@ -46,6 +46,7 @@ const SprintIntro = () => {
           <ScrumMeetingPanel
             visible={showFrame2}
             showNextFrame={showNextFrame}
+            className='2xl:mt-14'
           />
           <SprintDnDPanel
             visible={showFrame3 || showFrame4}

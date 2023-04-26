@@ -33,6 +33,7 @@ const SprintDnDPanel = ({
   delay = 0,
   visible = true,
   showNextFrame,
+  className,
 }: SprintDnDPanelProps) => {
   const [meetings, setMeetings] = useState<MoveItem[]>(sprintMeetings);
   const moveMeeting = (
@@ -70,21 +71,21 @@ const SprintDnDPanel = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration, delay }}
-        className="-mt-20 relative"
+        className={`-mt-10 2xl:mt-0 relative`}
       >
         <StaticMeetings />
         <InitMeetings meetings={initMeetings} moveMeeting={moveMeeting} />
         <MovedMeetings meetings={movedMeetings} moveMeeting={moveMeeting} />
         <Image
           src={sprintProcess.src}
-          alt="sprint_process"
-          className="w-[1080px] h-[540px]"
+          alt='sprint_process'
+          className='w-[1080px] h-[540px]'
           width={1000}
           height={540}
         />
         <Button
-          label="我完成了"
-          className="absolute bottom-0 right-0"
+          label='我完成了'
+          className='absolute bottom-0 right-0'
           onClick={showNextFrame}
           disabled={!isPassed}
         />

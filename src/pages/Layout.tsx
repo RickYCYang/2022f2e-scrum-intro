@@ -8,7 +8,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <main className="h-screen bg-village">{children}</main>
+      <main className='h-screen bg-village'>{children}</main>
       <Footer />
     </>
   );

@@ -22,7 +22,7 @@ const Task = forwardRef<HTMLDivElement, TaskProps>(
   ({ title, points, isDragging, canDrag, color, borderColor }, ref) => {
     /** borderColor's priority is higher than color */
     const actlColor = borderColor ?? color;
-    const dynamicClasses = classNames({
+    const classes = classNames({
       'opacity-50': isDragging,
       'opacity-100': !isDragging,
       'cursor-move': canDrag,
@@ -37,7 +37,7 @@ const Task = forwardRef<HTMLDivElement, TaskProps>(
         className={`px-6 py-3 bg-black/50 rounded-md border-2
                   text-white text-base font-bold 
                     flex items-center gap-4 text-left
-                    ${dynamicClasses}
+                    ${classes}
                   `}
       >
         {points !== undefined && <Points points={points} color={color} />}
