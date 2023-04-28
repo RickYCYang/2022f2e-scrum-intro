@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/router';
 
 /** components */
 import Main from '@/components/common/Main';
 import Container from '@/components/common/Container';
 import Button from '@/components/common/Button';
 import RoleWithTitle from '@/components/common/RoleWithTitle';
+import Dots from '@/components/end/Dots';
 
 /** images */
 import scrumTxt from '../../public/logo/scrum_txt.png';
@@ -17,7 +17,6 @@ import { roles } from '@/utils/const';
 const delay = 1;
 
 const End = () => {
-  const router = useRouter();
   const redirectToHome = () => window.location.replace('/');
 
   return (
@@ -26,7 +25,8 @@ const End = () => {
         <title>Scrum 任務完成</title>
       </Head>
       <Main>
-        <Container className="items-center py-2">
+        <Container className="items-center -mt-10 2xl:mt-0">
+          <Dots delay={delay * 5} />
           <div className="w-full flex flex-col items-center mb-8">
             <motion.img
               height={360}

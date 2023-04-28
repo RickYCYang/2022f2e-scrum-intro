@@ -10,7 +10,7 @@ import Layer1BgImgs from '@/components/entrance/Layer1BgImgs';
 import Layer2BgImgs from '@/components/entrance/Layer2BgImgs';
 import AcceptDialog from '@/components/entrance/AcceptDialog';
 
-const duration = 0.8;
+const duration = 1;
 const delay = 1;
 
 export default function Home() {
@@ -41,8 +41,8 @@ export default function Home() {
         <title>Scrum 新手村</title>
       </Head>
       <main
-        className='h-screen relative overflow-hidden
-        flex flex-col justify-center items-center'
+        className="h-screen relative overflow-hidden
+        flex flex-col justify-center items-center"
       >
         <Progressbar value={0} />
         <AnimatePresence>

@@ -21,7 +21,7 @@ const EnterVillage = ({ enterVillage, duration }: EnterVillageProps) => {
       className={`flex flex-col justify-center items-center z-50 relative`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration }}
+      transition={{ duration, delay: 0.2 }}
       exit={{ opacity: 0 }}
     >
       <Image src={scrum} alt="scurm" width={700} className="-mt-24" />

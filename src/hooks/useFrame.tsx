@@ -1,14 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const useFrame = (initFrame: number = 1) => {
   const [frame, setFrame] = useState(initFrame);
   const showNextFrame = () => {
     setFrame((prev) => prev + 1);
   };
-
-  useEffect(() => {
-    setFrame(initFrame);
-  }, [initFrame]);
 
   return {
     showNextFrame,

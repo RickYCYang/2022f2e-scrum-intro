@@ -26,7 +26,7 @@ const RoleWithTitle = ({ role, title, delay }: RoleWithTitleProps) => {
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: delay }}
+        transition={{ duration: 1, delay: (delay ?? 0) + 0.5 }}
         className={`${titleColor}`}
       >
         {title}
