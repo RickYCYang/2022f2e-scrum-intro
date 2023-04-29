@@ -5,7 +5,7 @@ import Dialog from '@/components/common/Dialog';
 import Button from '@/components/common/Button';
 
 /** utils */
-import { roles } from '@/utils/const';
+import { Role } from '@/utils/types';
 
 interface AcceptDialogProps {
   acceptChallenge: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -26,7 +26,7 @@ const AcceptDialog = ({
       exit={{ opacity: 0, transition: { delay: 0 } }}
       className={`w-2/3 h-0 flex flex-col justify-center items-center`}
     >
-      <Dialog label={roles.ANONUMITY} className="pt-24 pb-20">
+      <Dialog label={Role.ANONUMITY} className="pt-24 pb-20">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

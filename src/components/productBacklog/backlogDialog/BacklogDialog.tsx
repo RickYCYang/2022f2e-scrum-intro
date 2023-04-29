@@ -8,8 +8,7 @@ import Dialog from '@/components/common/Dialog';
 import Role from '@/components/common/Role';
 
 /** utils */
-import { roles } from '@/utils/const';
-import { RoleDialogProps } from '@/utils/types';
+import { RoleDialogProps, Role as TRole } from '@/utils/types';
 
 interface BacklogDialogProps extends RoleDialogProps {
   showFrame1: boolean;
@@ -32,9 +31,9 @@ const BacklogDialog = ({
   const showNextButton = !showFrame4;
   return (
     <div className={`flex gap-10`}>
-      <Role role={roles.PO} duration={0.4} className="min-h-[165px]" />
+      <Role role={TRole.PO} duration={0.4} className="min-h-[165px]" />
       <Dialog
-        label={roles.PO}
+        label={TRole.PO}
         className="mb-16"
         showNextButton={showNextButton}
         onClick={onClick}

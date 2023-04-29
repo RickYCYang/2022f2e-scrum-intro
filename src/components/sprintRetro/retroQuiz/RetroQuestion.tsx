@@ -5,9 +5,7 @@ import Description from '@/components/sprintRetro/retroQuiz/Description';
 import RadioButton from '@/components/common/RadioButton';
 
 /** utils */
-import { ElementStyleProps } from '@/utils/types';
-import type { SprintRetroOption } from '@/utils/types';
-import { themeColors } from '@/utils/const';
+import { ElementStyleProps, SprintRetroOption, Color } from '@/utils/types';
 
 interface RetroQuestionProps extends ElementStyleProps {
   questionNo: string;
@@ -30,9 +28,7 @@ const RetroQuestion = ({
       <div className="flex justify-center gap-8">
         {options.map((option) => {
           const radioButtonColor =
-            option.checked === option.isAnswer
-              ? themeColors.PRIMARY
-              : themeColors.RED;
+            option.checked === option.isAnswer ? Color.PRIMARY : Color.RED;
           return (
             <div
               key={option.id}

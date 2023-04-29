@@ -1,16 +1,16 @@
 /** utils */
-import { themeColors } from '@/utils/const';
+import { Color } from '@/utils/types';
 import classNames from 'classnames';
 
 interface PointsProps {
   points?: number;
-  color: themeColors;
+  color: Color;
 }
 
 const Points = ({ points, color }: PointsProps) => {
   const bgClasses = classNames({
-    'bg-primary': color === themeColors.PRIMARY,
-    'bg-yellow': color === themeColors.YELLOW,
+    'bg-primary': color === Color.PRIMARY,
+    'bg-yellow': color === Color.YELLOW,
   });
 
   return (

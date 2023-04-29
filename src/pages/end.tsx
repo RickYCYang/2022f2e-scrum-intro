@@ -6,13 +6,13 @@ import Main from '@/components/common/Main';
 import Container from '@/components/common/Container';
 import Button from '@/components/common/Button';
 import RoleWithTitle from '@/components/common/RoleWithTitle';
-import Dots from '@/components/end/Dots';
+import Spots from '@/components/end/Spots';
 
 /** images */
 import scrumTxt from '../../public/logo/scrum_txt.png';
 
 /** utils */
-import { roles } from '@/utils/const';
+import { Role } from '@/utils/types';
 
 const delay = 1;
 
@@ -26,7 +26,7 @@ const End = () => {
       </Head>
       <Main>
         <Container className="items-center -mt-10 2xl:mt-0">
-          <Dots delay={delay * 5} />
+          <Spots delay={delay * 5} />
           <div className="w-full flex flex-col items-center mb-8">
             <motion.img
               height={360}
@@ -48,7 +48,7 @@ const End = () => {
             <motion.h4
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ duration: 1, delay: delay * 2 }}
+              transition={{ duration: 1, delay: delay * 1.5 }}
               className="text-primary border border-primary bg-black/50 
                           py-5 px-20 rounded-lg text-xl shadow-primary shadow-md
                           "
@@ -71,24 +71,24 @@ const End = () => {
           <div className="w-full flex justify-center h-48 overflow-y-hidden gap-10">
             <div className="flex w-1/2 justify-center gap-10">
               <RoleWithTitle
-                role={roles.GG}
+                role={Role.GG}
                 title="窩的冰淇淋ㄋ？"
                 delay={delay * 3}
               />
               <RoleWithTitle
-                role={roles.EE}
+                role={Role.EE}
                 title="嗚嗚我會想尼QQ"
                 delay={delay * 3}
               />
             </div>
             <div className="flex w-1/2 justify-center gap-10">
               <RoleWithTitle
-                role={roles.MM}
+                role={Role.MM}
                 title="不愧似窩ㄉ學生"
                 delay={delay * 3}
               />
               <RoleWithTitle
-                role={roles.PO}
+                role={Role.PO}
                 title="哇喔太厲害ㄌㄅ"
                 delay={delay * 3}
               />

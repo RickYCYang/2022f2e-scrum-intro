@@ -1,39 +1,32 @@
 import { forwardRef } from 'react';
 
 /** utils */
-import { themeColors } from '@/utils/const';
-import type { ElementStyleProps } from '@/utils/types';
+import { ElementStyleProps, Color } from '@/utils/types';
 import classNames from 'classnames';
 
 interface MeetingProps extends ElementStyleProps {
   title: string;
   subtitle?: string;
-  color?: themeColors;
-  borderColor?: themeColors;
+  color?: Color;
+  borderColor?: Color;
 }
 const Meeting = forwardRef<HTMLDivElement, MeetingProps>(
   (
-    {
-      title,
-      subtitle,
-      color = themeColors.YELLOW,
-      borderColor = color,
-      className,
-    },
+    { title, subtitle, color = Color.YELLOW, borderColor = color, className },
     ref
   ) => {
     const actlBorderColor = classNames({
-      'border-yellow': borderColor === themeColors.YELLOW,
-      'border-primary': borderColor === themeColors.PRIMARY,
-      'border-red': borderColor === themeColors.RED,
+      'border-yellow': borderColor === Color.YELLOW,
+      'border-primary': borderColor === Color.PRIMARY,
+      'border-red': borderColor === Color.RED,
     });
     const titleColor = classNames({
-      'text-yellow': color === themeColors.YELLOW,
-      'text-primary': color === themeColors.PRIMARY,
+      'text-yellow': color === Color.YELLOW,
+      'text-primary': color === Color.PRIMARY,
     });
     const subtitleColor = classNames({
-      'text-primary': color === themeColors.YELLOW,
-      'text-dark': color === themeColors.PRIMARY,
+      'text-primary': color === Color.YELLOW,
+      'text-dark': color === Color.PRIMARY,
     });
     return (
       <div

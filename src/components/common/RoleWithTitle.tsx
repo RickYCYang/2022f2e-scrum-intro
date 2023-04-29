@@ -4,22 +4,21 @@ import { motion } from 'framer-motion';
 import Role from '@/components/common/Role';
 
 /** utils */
-import { ElementStyleProps } from '@/utils/types';
-import { roles } from '@/utils/const';
+import { ElementStyleProps, Role as TRole } from '@/utils/types';
 import classNames from 'classnames';
 
 interface RoleWithTitleProps extends ElementStyleProps {
-  role: roles;
+  role: TRole;
   title: string;
   delay?: number;
 }
 
 const RoleWithTitle = ({ role, title, delay }: RoleWithTitleProps) => {
   const titleColor = classNames({
-    'text-red': role === roles.GG,
-    'text-primary': role === roles.PO,
-    'text-yellow': role === roles.EE,
-    'text-purple': role === roles.MM,
+    'text-red': role === TRole.GG,
+    'text-primary': role === TRole.PO,
+    'text-yellow': role === TRole.EE,
+    'text-purple': role === TRole.MM,
   });
   return (
     <div className="flex flex-col items-center">

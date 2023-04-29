@@ -6,13 +6,13 @@ import DraggableTask from '@/components/common/DraggableTask';
 
 /** utils */
 import itemTypes from '@/utils/itemTypes';
-import type {
+import {
   MoveItem,
   MoveItemFn,
   ElementStyleProps,
   SlotType,
+  Color,
 } from '@/utils/types';
-import { themeColors } from '@/utils/const';
 import classNames from 'classnames';
 
 interface TaskSlotProps extends ElementStyleProps {
@@ -21,8 +21,8 @@ interface TaskSlotProps extends ElementStyleProps {
   task?: MoveItem;
   moveTask: MoveItemFn;
   canDrag: boolean;
-  color?: themeColors;
-  taskBorderColor?: themeColors;
+  color?: Color;
+  taskBorderColor?: Color;
   children?: ReactNode;
 }
 
@@ -32,7 +32,7 @@ const TaskSlot = ({
   task,
   moveTask,
   canDrag,
-  color = themeColors.PRIMARY,
+  color = Color.PRIMARY,
   taskBorderColor,
   className,
   children,
@@ -60,9 +60,9 @@ const TaskSlot = ({
    */
   const borderClasses = classNames({
     'border-2 border-dashed': !showTask,
-    'border-primary': color === themeColors.PRIMARY,
-    'border-yellow': color === themeColors.YELLOW,
-    'border-red': color === themeColors.RED,
+    'border-primary': color === Color.PRIMARY,
+    'border-yellow': color === Color.YELLOW,
+    'border-red': color === Color.RED,
   });
 
   return (
@@ -73,7 +73,7 @@ const TaskSlot = ({
       >
         {children}
         {showPreviewSlot && (
-          <div className='min-h-[56px] bg-black/50 rounded-md' />
+          <div className="min-h-[56px] bg-black/50 rounded-md" />
         )}
         {task?.title && (
           <DraggableTask

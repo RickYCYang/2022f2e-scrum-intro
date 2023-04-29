@@ -7,14 +7,15 @@ import TaskSlotTable from '@/components/common/TaskSlotTable';
 import Button from '@/components/common/Button';
 
 /** utils */
-import type {
+import {
   TransitionProps,
   ElementStyleProps,
   MoveItem,
   ButtonSVGClickEvent,
   SlotType,
+  Color,
 } from '@/utils/types';
-import { themeColors, sprintBacklogs } from '@/utils/const';
+import { sprintBacklogs } from '@/utils/const';
 import { isEmpty } from 'lodash';
 
 interface BacklogDnDPanelProps extends TransitionProps, ElementStyleProps {
@@ -68,11 +69,11 @@ const BacklogDnDPanel = ({
   );
   const progressbarLabel = `${currScrumPoints} / ${maximumScrumPoints}`;
   const exceedMaximumPoints = currScrumPoints > maximumScrumPoints;
-  let scrumTableProgressbarColor = themeColors.ORANGE;
-  let scrumTableTaskBorderColor = themeColors.ORANGE;
+  let scrumTableProgressbarColor = Color.ORANGE;
+  let scrumTableTaskBorderColor = Color.ORANGE;
   if (exceedMaximumPoints) {
-    scrumTableProgressbarColor = themeColors.RED;
-    scrumTableTaskBorderColor = themeColors.RED;
+    scrumTableProgressbarColor = Color.RED;
+    scrumTableTaskBorderColor = Color.RED;
   }
 
   let disableSprintBtn = true;
@@ -92,28 +93,28 @@ const BacklogDnDPanel = ({
         <TaskSlotTable
           tasks={tasks}
           moveTask={moveTask}
-          title='產品待辦清單'
-          subtitle='Product Backlog'
-          slotType='init'
+          title="產品待辦清單"
+          subtitle="Product Backlog"
+          slotType="init"
           slots={4}
         />
         <TaskSlotTable
           tasks={tasks}
           moveTask={moveTask}
-          title='開發Ａ組的短衝待辦清單'
-          subtitle='Sprint Backlog'
-          slotType='moved'
+          title="開發Ａ組的短衝待辦清單"
+          subtitle="Sprint Backlog"
+          slotType="moved"
           slots={4}
-          color={themeColors.YELLOW}
+          color={Color.YELLOW}
           progressbarValue={progressbarValue}
           progressbarLabel={progressbarLabel}
           progressbarColor={scrumTableProgressbarColor}
           taskBorderColor={scrumTableTaskBorderColor}
         />
         <Button
-          label='開始sprint'
+          label="開始sprint"
           onClick={showNextFrame}
-          className='self-end'
+          className="self-end"
           disabled={disableSprintBtn}
         />
       </div>

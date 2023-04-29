@@ -7,8 +7,7 @@ import EEDialogContent3 from '@/components/sprintIntro/introDialog/EEDialogConte
 import EEDialogContent4 from '@/components/sprintIntro/introDialog/EEDialogContent4';
 
 /** utils */
-import { RoleDialogProps } from '@/utils/types';
-import { roles, themeColors } from '@/utils/const';
+import { RoleDialogProps, Role as TRole, Color } from '@/utils/types';
 
 interface EEDialogProps extends RoleDialogProps {
   showEEDialog1: boolean;
@@ -37,8 +36,8 @@ const EEDialog = ({
         visible={visible}
         showNextButton={!showEEDialog3}
         onClick={onClick}
-        color={themeColors.YELLOW}
-        label={roles.EE}
+        color={Color.YELLOW}
+        label={TRole.EE}
         className="mb-4"
       >
         <EEDialogContent1 visible={showEEDialog1} duration={duration} />
@@ -46,7 +45,7 @@ const EEDialog = ({
         <EEDialogContent3 visible={showEEDialog3} duration={duration} />
         <EEDialogContent4 visible={showEEDialog4} duration={duration} />
       </Dialog>
-      <Role role={roles.EE} visible={visible} className="min-h-[165px]" />
+      <Role role={TRole.EE} visible={visible} className="min-h-[165px]" />
     </div>
   );
 };

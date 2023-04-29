@@ -2,7 +2,7 @@
 import Meeting from '../scrumMeetingPanel/Meeting';
 
 /** utils */
-import { themeColors } from '@/utils/const';
+import { Color } from '@/utils/types';
 
 const StaticMeetings = () => {
   return (
@@ -13,7 +13,7 @@ const StaticMeetings = () => {
                   before:border-b before:border-b-primary"
         title="產品待辦清單"
         subtitle="Product Backlog"
-        color={themeColors.PRIMARY}
+        color={Color.PRIMARY}
       />
 
       <Meeting
@@ -22,7 +22,7 @@ const StaticMeetings = () => {
                   before:border-b before:border-b-primary"
         title="短衝規劃會議"
         subtitle="Sprint Planning"
-        color={themeColors.PRIMARY}
+        color={Color.PRIMARY}
       />
       <Meeting
         className="absolute top-56 left-16
@@ -30,7 +30,7 @@ const StaticMeetings = () => {
                     before:border-b before:border-b-primary"
         title="短衝待辦清單"
         subtitle="Sprint Backlog"
-        color={themeColors.PRIMARY}
+        color={Color.PRIMARY}
       />
       <Meeting
         className="absolute top-[352px] left-56
@@ -38,7 +38,7 @@ const StaticMeetings = () => {
                   before:border-r before:border-r-primary"
         title="短衝"
         subtitle="Sprint"
-        color={themeColors.PRIMARY}
+        color={Color.PRIMARY}
       />
     </>
   );

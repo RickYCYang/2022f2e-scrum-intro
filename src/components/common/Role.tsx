@@ -2,12 +2,11 @@ import { memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 /** utils */
-import type {
-  Role as TypeRole,
+import {
+  Role as TRole,
   ElementStyleProps,
   TransitionProps,
 } from '@/utils/types';
-import { roles } from '@/utils/const';
 import classNames from 'classnames';
 
 /** images */
@@ -21,27 +20,27 @@ import imgGG from '../../../public/role/role_gg.png';
 import imgReversedGG from '../../../public/role/role_gg_reverse.png';
 
 interface RoleProps extends TransitionProps, ElementStyleProps {
-  role: TypeRole;
+  role: TRole;
   reversed?: boolean;
 }
 
 const Role = memo(
   ({
     role,
-    reversed = true && role !== roles.MM, // MM has no reversed effect
+    reversed = true && role !== TRole.MM, // MM has no reversed effect
     duration = 0.3,
     delay = 0,
     visible = true,
     className,
   }: RoleProps) => {
-    if (role === roles.ANONUMITY) return null;
+    if (role === TRole.ANONUMITY) return null;
     //if (!visible) return null;
 
     const roleImage = {
-      [roles.PO]: reversed ? imgReversedPO : imgPO,
-      [roles.MM]: imgMM,
-      [roles.EE]: reversed ? imgReversedEE : imgEE,
-      [roles.GG]: reversed ? imgReversedGG : imgGG,
+      [TRole.PO]: reversed ? imgReversedPO : imgPO,
+      [TRole.MM]: imgMM,
+      [TRole.EE]: reversed ? imgReversedEE : imgEE,
+      [TRole.GG]: reversed ? imgReversedGG : imgGG,
     };
 
     /**

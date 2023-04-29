@@ -1,6 +1,5 @@
 /** utils */
-import { ElementStyleProps } from '@/utils/types';
-import { themeColors } from '@/utils/const';
+import { ElementStyleProps, Color } from '@/utils/types';
 import classNames from 'classnames';
 
 interface RadioButtonProps extends ElementStyleProps {
@@ -8,14 +7,14 @@ interface RadioButtonProps extends ElementStyleProps {
   name: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
-  color?: themeColors;
-  borderColor?: themeColors;
+  color?: Color;
+  borderColor?: Color;
   disabled?: boolean;
 }
 
 const RadioButton = ({
-  color = themeColors.PRIMARY,
-  borderColor = themeColors.PRIMARY,
+  color = Color.PRIMARY,
+  borderColor = Color.PRIMARY,
   onChange,
   checked,
   value,
@@ -24,12 +23,12 @@ const RadioButton = ({
   disabled = false,
 }: RadioButtonProps) => {
   const colorClasses = classNames({
-    'text-primary': color === themeColors.PRIMARY,
-    'checked:outline-primary': color === themeColors.PRIMARY,
-    'border-primary': borderColor === themeColors.PRIMARY,
-    'text-red': color === themeColors.RED,
-    'checked:outline-red': color === themeColors.RED,
-    'border-red': borderColor === themeColors.RED,
+    'text-primary': color === Color.PRIMARY,
+    'checked:outline-primary': color === Color.PRIMARY,
+    'border-primary': borderColor === Color.PRIMARY,
+    'text-red': color === Color.RED,
+    'checked:outline-red': color === Color.RED,
+    'border-red': borderColor === Color.RED,
   });
 
   return (

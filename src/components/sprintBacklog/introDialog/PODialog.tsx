@@ -4,8 +4,7 @@ import Dialog from '@/components/common/Dialog';
 import PODialogContent from '@/components/sprintBacklog/introDialog/PODialogContent';
 
 /** utils */
-import { RoleDialogProps } from '@/utils/types';
-import { roles, themeColors } from '@/utils/const';
+import { RoleDialogProps, Role as TRole, Color } from '@/utils/types';
 
 const PODialog = ({ duration, delay, visible, onClick }: RoleDialogProps) => {
   return (
@@ -16,13 +15,13 @@ const PODialog = ({ duration, delay, visible, onClick }: RoleDialogProps) => {
         visible={visible}
         showNextButton={true}
         onClick={onClick}
-        color={themeColors.PRIMARY}
-        label={roles.PO}
+        color={Color.PRIMARY}
+        label={TRole.PO}
       >
         <PODialogContent />
       </Dialog>
       <Role
-        role={roles.PO}
+        role={TRole.PO}
         duration={0.3}
         visible={visible}
         className="min-h-[165px]"

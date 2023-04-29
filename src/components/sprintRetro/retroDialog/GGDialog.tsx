@@ -6,8 +6,7 @@ import GGDialogContent2 from '@/components/sprintRetro/retroDialog/GGDialogConte
 import GGDialogContent3 from '@/components/sprintRetro/retroDialog/GGDialogContent3';
 
 /** utils */
-import { RoleDialogProps } from '@/utils/types';
-import { roles, themeColors } from '@/utils/const';
+import { RoleDialogProps, Role as TRole, Color } from '@/utils/types';
 
 interface EEDialogProps extends RoleDialogProps {
   showGGDialog1: boolean;
@@ -31,15 +30,15 @@ const GGDialog = ({
         visible={true}
         showNextButton={showGGDialog1 || showGGDialog3}
         onClick={onClick}
-        color={themeColors.ORANGE}
-        label={roles.EE}
+        color={Color.ORANGE}
+        label={TRole.EE}
         className="mb-4"
       >
         <GGDialogContent1 visible={showGGDialog1} duration={duration} />
         <GGDialogContent2 visible={showGGDialog2} duration={duration} />
         <GGDialogContent3 visible={showGGDialog3} duration={duration} />
       </Dialog>
-      <Role role={roles.GG} visible={true} className="min-h-[165px]" />
+      <Role role={TRole.GG} visible={true} className="min-h-[165px]" />
     </div>
   );
 };

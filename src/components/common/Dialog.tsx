@@ -3,18 +3,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { AiFillCaretDown } from 'react-icons/ai';
 
 /** utils */
-import { themeColors, roles } from '@/utils/const';
-import type {
+import {
   ElementStyleProps,
   TransitionProps,
   SVGClickHandler,
+  Role,
+  Color,
 } from '@/utils/types';
 import classNames from 'classnames';
 
 interface DialogProps extends ElementStyleProps, TransitionProps {
   children?: ReactNode;
-  label: roles;
-  color?: themeColors;
+  label: Role;
+  color?: Color;
   onClick?: (event: SVGClickHandler) => void;
   showNextButton?: boolean;
   exitDuration?: number;
@@ -24,7 +25,7 @@ const Dialog = ({
   children,
   label,
   className,
-  color = themeColors.PRIMARY,
+  color = Color.PRIMARY,
   showNextButton,
   duration = 2,
   exitDuration = duration / 2,
@@ -34,28 +35,28 @@ const Dialog = ({
 }: DialogProps) => {
   /** theme color classes */
   const borderColorClass = classNames({
-    'border-primary': color === themeColors.PRIMARY,
-    'border-yellow': color === themeColors.YELLOW,
-    'border-purple': color === themeColors.PURPLE,
-    'border-orange': color === themeColors.ORANGE,
+    'border-primary': color === Color.PRIMARY,
+    'border-yellow': color === Color.YELLOW,
+    'border-purple': color === Color.PURPLE,
+    'border-orange': color === Color.ORANGE,
   });
   const shadowColorClass = classNames({
-    'shadow-primary': color === themeColors.PRIMARY,
-    'shadow-yellow': color === themeColors.YELLOW,
-    'shadow-purple': color === themeColors.PURPLE,
-    'shadow-orange': color === themeColors.ORANGE,
+    'shadow-primary': color === Color.PRIMARY,
+    'shadow-yellow': color === Color.YELLOW,
+    'shadow-purple': color === Color.PURPLE,
+    'shadow-orange': color === Color.ORANGE,
   });
   const bgColorClass = classNames({
-    'bg-primary': color === themeColors.PRIMARY,
-    'bg-yellow': color === themeColors.YELLOW,
-    'bg-purple': color === themeColors.PURPLE,
-    'bg-orange': color === themeColors.ORANGE,
+    'bg-primary': color === Color.PRIMARY,
+    'bg-yellow': color === Color.YELLOW,
+    'bg-purple': color === Color.PURPLE,
+    'bg-orange': color === Color.ORANGE,
   });
   const btnColorClass = classNames({
-    'text-primary': color === themeColors.PRIMARY,
-    'text-yellow': color === themeColors.YELLOW,
-    'text-purple': color === themeColors.PURPLE,
-    'text-orange': color === themeColors.ORANGE,
+    'text-primary': color === Color.PRIMARY,
+    'text-yellow': color === Color.YELLOW,
+    'text-purple': color === Color.PURPLE,
+    'text-orange': color === Color.ORANGE,
   });
 
   return (

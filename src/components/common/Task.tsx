@@ -4,8 +4,7 @@ import { forwardRef } from 'react';
 import Points from '@/components/common/Points';
 
 /** utils */
-import { ElementStyleProps } from '@/utils/types';
-import { themeColors } from '@/utils/const';
+import { ElementStyleProps, Color } from '@/utils/types';
 import classNames from 'classnames';
 
 interface TaskProps extends ElementStyleProps {
@@ -14,8 +13,8 @@ interface TaskProps extends ElementStyleProps {
   points?: number;
   isDragging?: boolean;
   canDrag?: boolean;
-  color: themeColors;
-  borderColor?: themeColors;
+  color: Color;
+  borderColor?: Color;
 }
 
 const Task = forwardRef<HTMLDivElement, TaskProps>(
@@ -26,9 +25,9 @@ const Task = forwardRef<HTMLDivElement, TaskProps>(
       'opacity-50': isDragging,
       'opacity-100': !isDragging,
       'cursor-move': canDrag,
-      'border-primary': actlColor === themeColors.PRIMARY,
-      'border-yellow': actlColor === themeColors.ORANGE,
-      'border-red': actlColor === themeColors.RED,
+      'border-primary': actlColor === Color.PRIMARY,
+      'border-yellow': actlColor === Color.ORANGE,
+      'border-red': actlColor === Color.RED,
     });
 
     return (

@@ -6,8 +6,7 @@ import Progressbar from '@/components/common/Progressbar';
 import PriorityLine from '@/components/common/PriorityLine';
 
 /** utils */
-import { MoveItem, MoveItemFn, SlotType } from '@/utils/types';
-import { themeColors } from '@/utils/const';
+import { MoveItem, MoveItemFn, SlotType, Color } from '@/utils/types';
 import { isNumber } from 'lodash';
 import classNames from 'classnames';
 
@@ -20,11 +19,11 @@ interface TaskSlotTableProps {
   canDrag?: boolean;
   showPriorityLine?: boolean;
   slotType: SlotType;
-  color?: themeColors;
+  color?: Color;
   progressbarValue?: number;
   progressbarLabel?: string;
-  progressbarColor?: themeColors;
-  taskBorderColor?: themeColors;
+  progressbarColor?: Color;
+  taskBorderColor?: Color;
 }
 
 const TaskSlotTable = ({
@@ -36,7 +35,7 @@ const TaskSlotTable = ({
   canDrag = true,
   showPriorityLine = false,
   slotType,
-  color = themeColors.PRIMARY,
+  color = Color.PRIMARY,
   progressbarValue,
   progressbarLabel,
   progressbarColor,
@@ -45,23 +44,23 @@ const TaskSlotTable = ({
   const slotsArr = Array.from({ length: slots }, (_, i) => i + 1);
 
   const tableShadowClass = classNames({
-    'shadow-primary': color === themeColors.PRIMARY,
-    'shadow-yellow': color === themeColors.YELLOW,
+    'shadow-primary': color === Color.PRIMARY,
+    'shadow-yellow': color === Color.YELLOW,
   });
 
   const headerBgColorClass = classNames({
-    'bg-primary': color === themeColors.PRIMARY,
-    'bg-yellow': color === themeColors.YELLOW,
+    'bg-primary': color === Color.PRIMARY,
+    'bg-yellow': color === Color.YELLOW,
   });
 
   const headerSubtitleColorClass = classNames({
-    'text-dark': color === themeColors.PRIMARY,
-    'text-[#933500]': color === themeColors.YELLOW,
+    'text-dark': color === Color.PRIMARY,
+    'text-[#933500]': color === Color.YELLOW,
   });
 
   const bodyBgColorClass = classNames({
-    'from-dark to-dark': color === themeColors.PRIMARY,
-    'from-[#A95E14] to-[#A95E14]': color === themeColors.YELLOW,
+    'from-dark to-dark': color === Color.PRIMARY,
+    'from-[#A95E14] to-[#A95E14]': color === Color.YELLOW,
   });
 
   return (
@@ -72,7 +71,7 @@ const TaskSlotTable = ({
       className={`w-[400px] h-[440px] flex flex-col rounded-md shadow-md ${tableShadowClass}`}
     >
       <div className={`py-2 rounded-t-md text-center ${headerBgColorClass}`}>
-        <h4 className='text-2xl font-bold'>{title}</h4>
+        <h4 className="text-2xl font-bold">{title}</h4>
         <h6 className={`text-base font-bold ${headerSubtitleColorClass}`}>
           {subtitle}
         </h6>
@@ -82,7 +81,7 @@ const TaskSlotTable = ({
         flex-1 flex flex-col justify-around items-center
         ${bodyBgColorClass}`}
       >
-        {showPriorityLine && <PriorityLine className='absolute left-3 top-0' />}
+        {showPriorityLine && <PriorityLine className="absolute left-3 top-0" />}
         {slotsArr.map((index) => {
           const task = tasks?.find(
             (t) => t.slot === index && t.slotType === slotType

@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 
 /** utils */
-import { ElementStyleProps } from '@/utils/types';
-import { themeColors } from '@/utils/const';
+import { ElementStyleProps, Color } from '@/utils/types';
 import classNames from 'classnames';
 
 interface ProgressbarProps extends ElementStyleProps {
   value: number;
-  color?: themeColors;
+  color?: Color;
   label?: string;
   showBorder?: boolean;
   fixedOnTop?: boolean;
@@ -15,7 +14,7 @@ interface ProgressbarProps extends ElementStyleProps {
 
 const Progressbar = ({
   value,
-  color = themeColors.PRIMARY,
+  color = Color.PRIMARY,
   label,
   className,
   style,
@@ -40,15 +39,15 @@ const Progressbar = ({
     border: showBorder,
     absolute: fixedOnTop,
     relative: !fixedOnTop,
-    'bg-dark': color === themeColors.PRIMARY,
-    'bg-[#933500]': [themeColors.ORANGE, themeColors.RED].includes(color),
-    'border-primary': color === themeColors.PRIMARY,
-    'border-[#933500]': [themeColors.ORANGE, themeColors.RED].includes(color),
+    'bg-dark': color === Color.PRIMARY,
+    'bg-[#933500]': [Color.ORANGE, Color.RED].includes(color),
+    'border-primary': color === Color.PRIMARY,
+    'border-[#933500]': [Color.ORANGE, Color.RED].includes(color),
   });
   const progressColorClass = classNames({
-    'bg-primary': color === themeColors.PRIMARY,
-    'bg-orange': color === themeColors.ORANGE,
-    'bg-[#FF0000]': color === themeColors.RED,
+    'bg-primary': color === Color.PRIMARY,
+    'bg-orange': color === Color.ORANGE,
+    'bg-[#FF0000]': color === Color.RED,
   });
 
   return (

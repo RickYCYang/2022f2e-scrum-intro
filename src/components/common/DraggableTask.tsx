@@ -5,14 +5,13 @@ import Task from '@/components/common/Task';
 
 /** utils */
 import itemTypes from '@/utils/itemTypes';
-import { MoveItem } from '@/utils/types';
-import { themeColors } from '@/utils/const';
+import { MoveItem, Color } from '@/utils/types';
 
 interface DraggableTaskProps {
   task: MoveItem;
   canDrag: boolean;
-  color: themeColors;
-  borderColor?: themeColors;
+  color: Color;
+  borderColor?: Color;
 }
 
 const DraggableTask = ({

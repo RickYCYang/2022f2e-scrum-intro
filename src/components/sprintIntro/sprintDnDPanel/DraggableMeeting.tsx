@@ -5,8 +5,7 @@ import Meeting from '../scrumMeetingPanel/Meeting';
 
 /** utils */
 import itemTypes from '@/utils/itemTypes';
-import type { MoveItem } from '@/utils/types';
-import { themeColors } from '@/utils/const';
+import { MoveItem, Color } from '@/utils/types';
 
 interface DraggableMeetingProps {
   meeting: MoveItem;
@@ -29,12 +28,12 @@ const DraggableMeeting = ({ meeting }: DraggableMeetingProps) => {
 
   const borderColor =
     meeting.slotType === 'moved' && meeting.slot !== meeting.targetSlot
-      ? themeColors.RED
-      : themeColors.YELLOW;
+      ? Color.RED
+      : Color.YELLOW;
 
   return (
     <Meeting
-      color={themeColors.YELLOW}
+      color={Color.YELLOW}
       borderColor={borderColor}
       ref={dragRef}
       title={meeting.title}

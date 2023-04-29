@@ -1,7 +1,18 @@
-/** utils */
-import { roles } from '@/utils/const';
+export enum Role {
+  PO = 'PO',
+  GG = 'GG',
+  MM = 'MM',
+  EE = 'EE',
+  ANONUMITY = '(謎之音)',
+}
 
-export type Role = roles.PO | roles.EE | roles.MM | roles.GG | roles.ANONUMITY;
+export enum Color {
+  PRIMARY = 'primary',
+  YELLOW = 'yellow',
+  ORANGE = 'orange',
+  PURPLE = 'purple',
+  RED = 'red',
+}
 
 export type SlotType = 'init' | 'moved';
 

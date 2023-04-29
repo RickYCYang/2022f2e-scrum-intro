@@ -8,8 +8,7 @@ import GGDialogContent2 from '@/components/sprintBacklog/introDialog/GGDialogCon
 import GGDialogContent3 from '@/components/sprintBacklog/introDialog/GGDialogContent3';
 
 /** utils */
-import { RoleDialogProps } from '@/utils/types';
-import { roles, themeColors } from '@/utils/const';
+import { RoleDialogProps, Role as TRole, Color } from '@/utils/types';
 
 interface EEGGDialogProps extends RoleDialogProps {
   showEERole: boolean;
@@ -37,11 +36,11 @@ const EEGGDialog = ({
   showGGDialog3,
 }: EEGGDialogProps) => {
   /** EE is the first appearing role */
-  let role = roles.EE;
-  let color = themeColors.YELLOW;
+  let role = TRole.EE;
+  let color = Color.YELLOW;
   if (showGGDialog) {
-    color = themeColors.ORANGE;
-    role = roles.GG;
+    color = Color.ORANGE;
+    role = TRole.GG;
   }
 
   return (
@@ -51,8 +50,8 @@ const EEGGDialog = ({
         visible={showEEDialog}
         showNextButton={true}
         onClick={onClick}
-        color={themeColors.YELLOW}
-        label={roles.EE}
+        color={Color.YELLOW}
+        label={TRole.EE}
         delay={0}
         exitDuration={0}
       >
@@ -64,8 +63,8 @@ const EEGGDialog = ({
         visible={showGGDialog}
         showNextButton={!showGGDialog2}
         onClick={onClick}
-        color={themeColors.ORANGE}
-        label={roles.GG}
+        color={Color.ORANGE}
+        label={TRole.GG}
         delay={1}
       >
         <GGDialogContent1 duration={duration} visible={showGGDialog1} />
@@ -74,13 +73,13 @@ const EEGGDialog = ({
       </Dialog>
 
       <Role
-        role={roles.EE}
+        role={TRole.EE}
         duration={0.3}
         visible={showEERole}
         className="min-h-[165px]"
       />
       <Role
-        role={roles.GG}
+        role={TRole.GG}
         duration={0.3}
         visible={showGGRole}
         className="min-h-[165px]"

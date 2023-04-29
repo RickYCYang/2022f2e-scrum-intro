@@ -1,12 +1,4 @@
-import type { MoveItem, SprintretroQuiz } from '@/utils/types';
-
-export enum roles {
-  PO = 'PO',
-  GG = 'GG',
-  MM = 'MM',
-  EE = 'EE',
-  ANONUMITY = '(謎之音)',
-}
+import { MoveItem, SprintretroQuiz, Role } from '@/utils/types';
 
 export enum themeColors {
   PRIMARY = 'primary',
@@ -99,14 +91,14 @@ export const sprintRetroInitQuiz: SprintretroQuiz = {
     options: [
       {
         id: 1,
-        role: roles.MM,
+        role: Role.MM,
         isAnswer: false,
         desc: '這次我幫了很多人救火耶～',
         checked: false,
       },
       {
         id: 2,
-        role: roles.PO,
+        role: Role.PO,
         isAnswer: true,
         desc: '大家在開發上都會互相 cover ， 讓任務都有準在時間內完成 。',
         checked: false,
@@ -118,14 +110,14 @@ export const sprintRetroInitQuiz: SprintretroQuiz = {
     options: [
       {
         id: 1,
-        role: roles.EE,
+        role: Role.EE,
         isAnswer: true,
         desc: '可以記錄這次的開發時間 ， 讓預估團隊點數可以更精準 。',
         checked: false,
       },
       {
         id: 2,
-        role: roles.GG,
+        role: Role.GG,
         isAnswer: false,
         desc: '開發時間預估不準確 ， 請後端下次改進 ， 避免 delay 到我 。',
         checked: false,

@@ -5,8 +5,7 @@ import MMDialogContent1 from '@/components/sprintBacklog/introDialog/MMDialogCon
 import MMDialogContent2 from '@/components/sprintBacklog/introDialog/MMDialogContent2';
 
 /** utils */
-import { RoleDialogProps } from '@/utils/types';
-import { roles, themeColors } from '@/utils/const';
+import { RoleDialogProps, Role as TRole, Color } from '@/utils/types';
 
 interface MMDialogProps extends RoleDialogProps {
   showMMDialog1: boolean;
@@ -29,15 +28,15 @@ const MMDialog = ({
         visible={visible}
         showNextButton={true}
         onClick={onClick}
-        color={themeColors.PURPLE}
-        label={roles.MM}
+        color={Color.PURPLE}
+        label={TRole.MM}
         className="mb-4"
       >
         <MMDialogContent1 visible={showMMDialog1} duration={duration} />
         <MMDialogContent2 visible={showMMDialog2} duration={duration} />
       </Dialog>
       <Role
-        role={roles.MM}
+        role={TRole.MM}
         visible={visible}
         duration={0.3}
         className="min-h-[165px]"
