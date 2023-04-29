@@ -6,7 +6,7 @@ import RetroQuestion from '@/components/sprintRetro/retroQuiz/RetroQuestion';
 import Button from '@/components/common/Button';
 
 /** utils */
-import { sprintRetroInitQuiz } from '@/utils/const';
+import { sprintRetroInitQuiz } from '@/utils/data';
 import type {
   ElementStyleProps,
   ButtonSVGClickEvent,

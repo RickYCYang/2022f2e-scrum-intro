@@ -21,7 +21,7 @@ import {
   SlotType,
   ButtonSVGClickEvent,
 } from '@/utils/types';
-import { sprintMeetings } from '@/utils/const';
+import { sprintMeetings } from '@/utils/data';
 import { isEmpty } from 'lodash';
 
 interface SprintDnDPanelProps extends TransitionProps, ElementStyleProps {
@@ -78,14 +78,14 @@ const SprintDnDPanel = ({
         <MovedMeetings meetings={movedMeetings} moveMeeting={moveMeeting} />
         <Image
           src={sprintProcess.src}
-          alt='sprint_process'
-          className='w-[1080px] h-[540px]'
+          alt="sprint_process"
+          className="w-[1080px] h-[540px]"
           width={1000}
           height={540}
         />
         <Button
-          label='我完成了'
-          className='absolute bottom-0 right-0'
+          label="我完成了"
+          className="absolute bottom-0 right-0"
           onClick={showNextFrame}
           disabled={!isPassed}
         />

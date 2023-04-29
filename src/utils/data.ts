@@ -1,13 +1,5 @@
 import { MoveItem, SprintretroQuiz, Role } from '@/utils/types';
 
-export enum themeColors {
-  PRIMARY = 'primary',
-  YELLOW = 'yellow',
-  ORANGE = 'orange',
-  PURPLE = 'purple',
-  RED = 'red',
-}
-
 /** backlogs */
 export const productBacklogs: MoveItem[] = [
   {

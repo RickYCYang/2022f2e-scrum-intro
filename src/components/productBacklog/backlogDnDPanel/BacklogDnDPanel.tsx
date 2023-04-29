@@ -15,7 +15,7 @@ import type {
   SlotType,
   ButtonSVGClickEvent,
 } from '@/utils/types';
-import { productBacklogs } from '@/utils/const';
+import { productBacklogs } from '@/utils/data';
 import { isEmpty } from 'lodash';
 
 interface BacklogDnDPanelProps extends ElementStyleProps {
@@ -75,25 +75,25 @@ const BacklogDnDPanel = ({
         <div className={`relative w-full flex justify-center ${className}`}>
           <InitTasks
             tasks={initTasks}
-            slotType='init'
+            slotType="init"
             moveTask={moveTask}
             canDrag={canDrag}
             showExample={showExample}
           />
           <TaskSlotTable
-            title='產品待辦清單'
-            subtitle='Product Backlog'
+            title="產品待辦清單"
+            subtitle="Product Backlog"
             slots={4}
             tasks={movedTasks}
             canDrag={canDrag}
-            slotType='moved'
+            slotType="moved"
             moveTask={moveTask}
             showPriorityLine={true}
           />
           {canDrag ? (
             <Button
-              label='我完成了'
-              className='absolute bottom-0 right-0'
+              label="我完成了"
+              className="absolute bottom-0 right-0"
               onClick={showNextFrame}
               disabled={!isPassed}
             />

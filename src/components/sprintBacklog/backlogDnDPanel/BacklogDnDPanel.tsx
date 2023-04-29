@@ -15,7 +15,7 @@ import {
   SlotType,
   Color,
 } from '@/utils/types';
-import { sprintBacklogs } from '@/utils/const';
+import { sprintBacklogs } from '@/utils/data';
 import { isEmpty } from 'lodash';
 
 interface BacklogDnDPanelProps extends TransitionProps, ElementStyleProps {
